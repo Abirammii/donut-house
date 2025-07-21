@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donut house</title>
+<!-- Swiper CSS CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  
+
+  <nav class="navbar" id="navbar">
+    <a href="#home">Home</a>
+    <a href="#build-your-donut">Customize</a>
+    <a href="#our-menu">Our menu</a>
+  </nav>
+
+  <div id="menu-btn" class="fas fa-bars"></div>
+</header>
+
+
+
+<section class="home" id="home">
+  <div class="content">
+    <h3>        </h3>
+    <span>                               </span>
+    <p> 
+</p>
+    
+    
+  </div>
+</section>
+
+<section class="build-your-donut" id="build-your-donut">
+  <h1 class="heading">BUILD YOUR DONUT</h1>
+
+  <div class="builder-preview-wrapper">
+
+    <!-- 🍩 Donut Builder Form -->
+    <div class="builder-form">
+      <div class="section">
+        <label for="base">Choose Base</label>
+        <select id="base">
+          <option value="Plain">Plain</option>
+          <option value="Chocolate">Chocolate</option>
+        </select>
+      </div>
+
+      <div class="section">
+        <label for="glaze">Choose Glaze</label>
+        <select id="glaze">
+          <option value="Vanilla">Vanilla</option>
+          <option value="Strawberry">Strawberry</option>
+          <option value="Caramel">Caramel</option>
+        </select>
+      </div>
+
+      <div class="section">
+        <label for="toppings">Choose Toppings</label>
+        <select id="toppings">
+          <option value="">-- none --</option>
+          <option value="sprinkles">Sprinkles</option>
+         
+        </select>
+      </div>
+      <div class="button-group">
+      <button class="btn" onclick="buildDonut()">Build Donut</button>
+      <button class="btn" onclick="buildDonut()">order now</button>
+      </div>
+    </div>
+
+    <!-- 🖼 Donut Image Preview -->
+    <div class="builder-image" id="imageContainer">
+      <h2>DONUT PREVIEW</h2>
+      <img id="donutImage" src="main.png" alt="Your Donut Will Appear Here" />
+      <h2 id="imageText">Choose options and click Build Donut</h2>
+    </div>
+
+  </div>
+  
+</section>
+
+<section class="our-menu" id="our-menu">
+  <h1 class="heading">OUR MENU</h1>
+
+  <div class="swiper menuSwiper">
+    <div class="swiper-wrapper">
+
+      <!-- Card 1 -->
+      <div class="swiper-slide card">
+        <img src="rainbow.png" alt="">
+        <h3>Sprinkle spectrum</h3>
+        <p>A bite of this rainbow and you're instantly in your sweet era</p>
+        <button class="order-btn">ORDER</button>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="swiper-slide card">
+        <img src="triplechoco.png" alt="Adventure Dips">
+        <h3>Triple choco</h3>
+        <p>Three time the chocolate,zero regrets</p>
+        <button class="order-btn">ORDER</button>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="swiper-slide card">
+        <img src="blueberry.png" alt="Season's Dippin'">
+        <h3>Berry delight</h3>
+        <p>A soft, sweet escape in every bite.</p>
+        <button class="order-btn">ORDER</button>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="swiper-slide card">
+        <img src="Maple_Glazed.png" alt="Classic">
+        <h3>Golden drizzle</h3>
+        <p>Feels like fall, tastes like heaven</p>
+        <button class="order-btn">ORDER</button>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="swiper-slide card">
+        <img src="Heart_shape.png" alt="Glaze Party">
+        <h3>Love ring</h3>
+        <p>Made with love and little extra sugar</p>
+        <button class="order-btn">ORDER</button>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="swiper-slide card">
+        <img src="threeicecram.png" alt="Sprinkle Joy">
+        <h3>The sweet trio</h3>
+        <p>Three times the flavour, triple the joy.</p>
+        <button class="order-btn">ORDER</button>
+      </div>
+
+    </div>
+
+    <!-- Navigation Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+
+
+
+ <script>
+    
+    function buildDonut() {
+      const base = document.getElementById('base').value.toLowerCase();
+      const glaze = document.getElementById('glaze').value.toLowerCase();
+      const topping = document.getElementById('toppings').value.toLowerCase();
+
+      let imagePath = "images/default.png";
+      let description = `You built a ${base} donut with ${glaze} glaze`;
+
+      if (topping === "sprinkles") {
+        description += " and sprinkles!";
+        if (base === "plain" && glaze === "vanilla") {
+          imagePath = "pvs.png";
+        } else if (base === "plain" && glaze === "strawberry") {
+          imagePath = "pss.png";
+        } else if (base === "plain" && glaze === "caramel") {
+          imagePath = "pcs.png";
+        }else if (base === "chocolate" && glaze === "vanilla") {
+          imagePath = "chocovanillasprinkle.png";
+          } else if (base === "chocolate" && glaze === "strawberry") {
+          imagePath = "chocostrawsprinkle.png";
+          } else if (base === "chocolate" && glaze === "caramel") {
+          imagePath = "chococarasprink.png";
+          
+        }
+      
+      } else {
+        description += "!";
+        if (base === "plain" && glaze === "vanilla") {
+          imagePath = "plain_vanilla.png";
+          } else if (base === "plain" && glaze === "caramel") {
+          imagePath = "plain_caramel.png";
+          } else if (base === "plain" && glaze === "strawberry") {
+          imagePath = "plain_strawbwrry.png";
+          } else if (base === "chocolate" && glaze === "vanilla") {
+          imagePath = "chocolate_vanilla.png";
+          } else if (base === "chocolate" && glaze === "strawberry") {
+          imagePath = "chocolate_straw.png";
+          } else if (base === "chocolate" && glaze === "caramel") {
+          imagePath = "chocolate.caramel.png";
+          
+        }
+      }
+
+      document.getElementById('donutImage').src = imagePath;
+      document.getElementById('donutImage').alt = "Your Donut";
+      document.getElementById('imageText').textContent = description;
+    }
+  </script>
+
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const navbar = document.getElementById('navbar');
+
+  menuBtn.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+    menuBtn.classList.toggle('fa-times');
+  });
+</script>
+<!-- Swiper JS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper(".menuSwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+
+
+</body>
