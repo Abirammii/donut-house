@@ -6,6 +6,7 @@
   <title>Donut house</title>
 <!-- Swiper CSS CDN -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -69,8 +70,8 @@
         </select>
       </div>
       <div class="button-group">
-      <button class="btn" onclick="buildDonut()">Build Donut</button>
-      <button class="btn" onclick="buildDonut()">order now</button>
+      <button class="btn" onclick="buildDonut()">Build</button>
+      <button class="btn" onclick="buildDonut()">order</button>
       </div>
     </div>
 
@@ -226,5 +227,27 @@
   });
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".menuSwiper", {
+    loop: true,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,   // ✅ Mobile phones
+      },
+      768: {
+        slidesPerView: 2,   // ✅ Tablets
+      },
+      1024: {
+        slidesPerView: 3,   // ✅ Desktop
+      }
+    }
+  });
+</script>
 
 </body>
