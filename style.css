@@ -171,7 +171,7 @@ select, .toppings {
   border: 1px dashed #9c8fe5;
 }
 
-.preview h1 {
+.preview h2 {
   margin-bottom: 10px;
   color: #000;
 }
@@ -185,7 +185,7 @@ select, .toppings {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.builder-image h1 {
+.builder-image h2 {
   margin-bottom: 20px; /* Adds space between heading and image */
   font-size: 2rem;
   font-weight: bold;
@@ -247,7 +247,7 @@ select, .toppings {
   color: #fff;
   padding: 0.8rem 2rem;
   border: none;
-  border-radius: 30px;
+  border-radius: 20px;
   cursor: pointer;
   font-size: 1.2rem;
   transition: background 0.3s;
@@ -263,6 +263,12 @@ select, .toppings {
   margin-top: 4px; /* tighter gap between select and buttons */
   justify-content: center;
 }
+
+
+.button-group .btn:hover {
+  background-color: #d6336c;
+}
+
 .our-menu {
   padding: 5rem 2rem;
   background-color: var(--light-pink);
@@ -349,6 +355,11 @@ select, .toppings {
     flex-direction: column;
     padding: 100px 20px 40px;
   }
+  body {
+  font-size: 1.6rem;
+  background: url(mobbg.png);
+  
+}
 
   section.home::after {
     position: static;
@@ -362,4 +373,58 @@ select, .toppings {
     gap: 10px;
   }
 }
+.order-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+  }
+.btn {
+  background-color: #e64980;
+  color: #fff;
+  padding: 0.1rem 4rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.3s;
+  margin-top: 50px;
+}
+
+.btn:hover {
+  background-color: #d6336c;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.button-group .btn {
+  flex: 1;
+  padding: 0.8rem 3rem;
+  border-radius: 30px;
+  background-color: #e64980;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.button-group .btn:hover {
+  background-color: #d6336c;
+}
+.builder-image h2 {
+  margin-bottom: 20px; /* Adds space between heading and image */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.card {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .swiper {
+    padding: 1rem;
+  }
 
